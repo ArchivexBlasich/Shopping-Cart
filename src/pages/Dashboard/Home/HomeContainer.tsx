@@ -1,18 +1,10 @@
-import { Fragment } from "react/jsx-runtime";
 import { useDashboardContext } from "../hooks/useDashboardContextType";
+import Carousel from "./components/HomeCarousel";
 
 export default function HomeContainer() {
-  const { products, productHandlers } = useDashboardContext();
-
+  const { products } = useDashboardContext();
+  const images = products.map(product => product.image);
   return (
-    <>
-      {products.map((product) => (
-        <Fragment key={product.id}>
-          {product.title}{" "}
-          <button onClick={() => productHandlers.handleAddToCart(product.id)}>Add</button>
-          <br />
-        </Fragment>
-      ))}
-    </>
+    <Carousel images={images} />
   );
 }
