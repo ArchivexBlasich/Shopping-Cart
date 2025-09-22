@@ -49,12 +49,21 @@ function App() {
     };
   }, []);
 
-  function toggleIsCart(id: number) {
+  function removeOrAddFromCart(id: number, isCart: boolean) {
     return setProducts(
-      products.map(product => {
-      if (product.id === id) return {...product, isCart: !product.isCart}
-      return product;
-    }))
+      products.map((product) => {
+        if (product.id === id) return { ...product, isCart: isCart };
+        return product;
+      })
+    );
+  }
+
+  function handleAddToCart(id: number) {
+    removeOrAddFromCart(id, true);
+  }
+
+  function handleRemoveFromCart(id: number) {
+    removeOrAddFromCart(id, false);
   }
 
   if (loading) {
@@ -68,7 +77,14 @@ function App() {
   return (
     <>
       <Routes>
-        <Route element={<PageLayout products={products} toggleIsCart={toggleIsCart}/>}>
+        <Route
+          element={
+            <PageLayout
+              products={products}
+              productHandlers={{ handleAddToCart, handleRemoveFromCart }}
+            />
+          }
+        >
           <Route path="/" element={<Navigate to={PublicRoutes.HOME} />} />
           <Route path={PublicRoutes.HOME} element={<HomeContainer />} />
           <Route path={PublicRoutes.SHOP} element={<ShopContainer />} />
