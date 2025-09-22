@@ -3,7 +3,7 @@ export interface EndPointProduct {
   description: string;
   id: number;
   image: string;
-  price: string | number;
+  price: number;
   rating: { rate: number; count: number };
   title: string;
 }

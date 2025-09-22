@@ -1,9 +1,13 @@
 import type { Product } from "./Product.model";
 
+type UpdateProductInList = (id: number) => void;
+
 export interface DashboardContextType {
   products: Product[],
   productHandlers: {
-    handleAddToCart: (id: number) => void,
-    handleRemoveFromCart: (id: number) => void,
+    handleAddToCart: UpdateProductInList,
+    handleRemoveFromCart: UpdateProductInList,
+    incrementQuantity: UpdateProductInList,
+    decrementQuantity: UpdateProductInList,
   }
 }

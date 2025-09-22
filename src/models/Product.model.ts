@@ -3,8 +3,9 @@ export interface Product {
   description: string;
   id: number;
   image: string;
-  price: string | number;
+  price: number;
   rating: number;
   title: string;
   isCart: boolean;
+  quantity: number;
 }

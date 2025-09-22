@@ -11,6 +11,7 @@ export const createUserAdapter = (product: EndPointProduct) => {
         image: product.image,
         rating: product.rating.rate,
         isCart: false,
+        quantity: 1,
     } 
 
     return formattedProduct;

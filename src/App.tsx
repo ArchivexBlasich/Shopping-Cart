@@ -49,21 +49,46 @@ function App() {
     };
   }, []);
 
-  function removeOrAddFromCart(id: number, isCart: boolean) {
-    return setProducts(
+  function updateIsCartState(id: number, newIsCart: boolean) {
+    setProducts(
       products.map((product) => {
-        if (product.id === id) return { ...product, isCart: isCart };
+        if (product.id === id) return { ...product, isCart: newIsCart };
         return product;
       })
     );
   }
 
   function handleAddToCart(id: number) {
-    removeOrAddFromCart(id, true);
+    updateIsCartState(id, true);
   }
 
   function handleRemoveFromCart(id: number) {
-    removeOrAddFromCart(id, false);
+    updateIsCartState(id, false);
+  }
+
+  function updateQuantity(id: number, add: boolean) {
+    setProducts(
+      products.map((product) => {
+        if (product.id === id)
+          return {
+            ...product,
+            quantity: add
+              ? product.quantity + 1
+              : product.quantity > 1
+              ? product.quantity - 1
+              : 1,
+          };
+        return product;
+      })
+    );
+  }
+
+  function incrementQuantity(id: number) {
+    updateQuantity(id, true);
+  }
+
+  function decrementQuantity(id: number) {
+    updateQuantity(id, false);
   }
 
   if (loading) {
@@ -81,7 +106,12 @@ function App() {
           element={
             <PageLayout
               products={products}
-              productHandlers={{ handleAddToCart, handleRemoveFromCart }}
+              productHandlers={{
+                handleAddToCart,
+                handleRemoveFromCart,
+                incrementQuantity,
+                decrementQuantity,
+              }}
             />
           }
         >
