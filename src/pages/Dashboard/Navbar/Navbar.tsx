@@ -1,7 +1,11 @@
 import { Link } from "react-router";
 import { PublicRoutes } from "../../../models/routes";
 
-export default function Navbar() {
+interface Props {
+  numberOfItemsInChart: number
+}
+
+export default function Navbar(props : Props) {
   return (
     <>
       <nav>
@@ -13,7 +17,7 @@ export default function Navbar() {
             <Link to={PublicRoutes.SHOP}>Shop</Link>
           </li>
           <li>
-            <Link to={PublicRoutes.CART}>Cart</Link>
+            <Link to={PublicRoutes.CART}>Cart ({props.numberOfItemsInChart})</Link>
           </li>
         </ul>
       </nav>
