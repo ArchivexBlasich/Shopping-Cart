@@ -5,6 +5,8 @@ export default function HomeContainer() {
   const { products } = useDashboardContext();
   const images = products.map(product => product.image);
   return (
-    <Carousel images={images} />
+    <main className="container">
+      <Carousel images={images} autoPlay={true} showButtons={true}/>
+    </main>
   );
 }

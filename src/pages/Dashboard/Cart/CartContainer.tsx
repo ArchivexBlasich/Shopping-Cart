@@ -6,7 +6,7 @@ export default function CartContainer() {
   const { products, productHandlers } = useDashboardContext();
 
   return (
-    <>
+    <main className="container">
       {products.map((product) => {
         if (product.isCart) {
           return (
@@ -30,6 +30,6 @@ export default function CartContainer() {
           );
         }
       })}
-    </>
+    </main>
   );
 }

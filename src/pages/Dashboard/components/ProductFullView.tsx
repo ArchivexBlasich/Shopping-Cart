@@ -16,7 +16,7 @@ export function ProductFullView() {
   const product = products[index];
 
   return (
-    <main>
+    <main className="container">
       <nav>
         <Link to={`/${PublicRoutes.SHOP}`}>← Back to Shop</Link>
       </nav>

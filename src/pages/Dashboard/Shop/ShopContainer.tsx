@@ -7,7 +7,7 @@ export default function ShopContainer() {
   const { products, productHandlers } = useDashboardContext();
 
   return (
-    <>
+    <main className="container">
       {products.map((product) => (
         <Fragment key={product.id}>
           <ProductCard
@@ -25,6 +25,6 @@ export default function ShopContainer() {
           <br />
         </Fragment>
       ))}
-    </>
+    </main>
   );
 }
