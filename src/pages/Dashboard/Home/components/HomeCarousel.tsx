@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./HomeCarousel.module.css"
+import colors from "@/styles/colors.module.css";
 
 interface Props {
   images: string[];
@@ -48,10 +49,10 @@ export default function Carousel(props: Props) {
       />
       <div>
         {props.showButtons ? (
-          <>
-            <button onClick={previous}>{"<"}</button>
-            <button onClick={next}>{">"}</button>
-          </>
+          <div className={`${styles.buttonsContainer}`}>
+            <button className={`${colors.primaryButton }`} onClick={previous}>{"<"}</button>
+            <button className={`${colors.primaryButton }`} onClick={next}>{">"}</button>
+          </div>
         ) : (
           <></>
         )}

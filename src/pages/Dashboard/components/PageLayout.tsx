@@ -11,9 +11,7 @@ export default function PageLayout(context: DashboardContextType) {
   return (
     <>
       <Navbar numberOfItemsInChart={numberOfItemsInChart} />
-      <main>
-        <Outlet context={context} />
-      </main>
+      <Outlet context={context} />
     </>
   );
 }
