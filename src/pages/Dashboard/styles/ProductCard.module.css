@@ -1,0 +1,57 @@
+@import url("../../../index.css");
+
+.productContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: max-content 1fr;
+
+  & header {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
+  & figure {
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+  }
+}
+
+.productContainer {
+    padding: 0.3rem;
+    transition: transform 0.3s ease;
+}
+
+.productContainer:hover {
+    transform: scale(1.02);
+}
+
+.header {
+  padding: 0.4rem;
+  text-align: center;
+}
+
+.figure {
+  width: 100%; 
+  margin: 0;
+  padding: 0.2rem; 
+  overflow: hidden; 
+  border-radius: 8px; 
+}
+
+.figure img {
+  width: 100%;
+  height: var(--product-card-image-height);
+  object-fit: contain;
+  object-position: center; 
+}
+
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    & :last-child {
+        margin-top: 1rem;
+    }
+}

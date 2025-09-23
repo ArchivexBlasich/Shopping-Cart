@@ -49,13 +49,9 @@
   background-color: #cbd5e1;
 }
 
-.cartBadge {
-  background-color: #ef4444;
-  color: #ffffff;
-}
-
 .border {
   border: 2px solid #e2e8f0;
+  border-radius: 8px;
 }
 
 .cardShadow {

@@ -1,16 +1,36 @@
 .homeContainer {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-style: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-style: italic;
+
+  & h1 {
+    font-size: 1.4rem;
+  }
+
+  @media (min-width: 475px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+  }
 }

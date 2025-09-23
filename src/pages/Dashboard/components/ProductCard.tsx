@@ -2,6 +2,8 @@ import type { ReactElement } from "react";
 import { Link } from "react-router";
 import { PublicRoutes } from "../../../models/routes";
 import { printRateWithStars } from "../utils/showProductStars";
+import styles from "../styles/ProductCard.module.css";
+import colors from "@/styles/colors.module.css";
 
 interface Props {
   id: number;
@@ -14,22 +16,24 @@ interface Props {
 
 export function ProductCard(props: Props) {
   return (
-    <article>
-      <header>
-        <h3>{props.title}</h3>
+    <article
+      className={`${styles.productContainer} ${colors.cardBackground} ${colors.border} ${colors.cardShadow}`}
+    >
+      <header className={`${styles.header}`}>
+        <h4>{props.title}</h4>
       </header>
-      <figure>
+      <figure className={`${styles.figure}`}>
         <nav>
           <Link to={`/${PublicRoutes.PRODUCT}/${props.id}`}>
             <img src={props.imageURL} alt={props.title} />
           </Link>
         </nav>
       </figure>
-      <p>${props.price}</p>
-      <p>
-        Rating: {printRateWithStars(props.rating)}
-      </p>
-      {props.children}
+      <div className={`${styles.productDetails}`}>
+        <p>Price: ${props.price}</p>
+        <p>Rating: {printRateWithStars(props.rating)}</p>
+        {props.children}
+      </div>
     </article>
   );
 }
