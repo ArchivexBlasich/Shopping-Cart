@@ -10,6 +10,7 @@ import type { Product } from "./models/Product.model";
 import "./App.css";
 import type { EndPointProduct } from "./models/EndPointProduct.model";
 import { createUserAdapter } from "./adapters/product.adapter";
+import { ProductFullView } from "./pages/Dashboard/components/ProductFullView";
 
 const url = "https://fakestoreapi.com/products";
 
@@ -118,6 +119,7 @@ function App() {
           <Route path="/" element={<Navigate to={PublicRoutes.HOME} />} />
           <Route path={PublicRoutes.HOME} element={<HomeContainer />} />
           <Route path={PublicRoutes.SHOP} element={<ShopContainer />} />
+          <Route path={`${PublicRoutes.PRODUCT}/:id`} element={<ProductFullView />} />
           <Route path={PublicRoutes.CART} element={<CartContainer />} />
           <Route path="*" element={<NotFound />} />
         </Route>
