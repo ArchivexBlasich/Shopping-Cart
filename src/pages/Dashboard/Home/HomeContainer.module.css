@@ -1,5 +1,7 @@
 .homeContainer {
   min-height: 100vh;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
 
   display: flex;
   flex-direction: column;

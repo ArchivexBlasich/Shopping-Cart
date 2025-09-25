@@ -1,5 +1,6 @@
 .header {
     padding: 1rem 0;
+    min-width: 100%;
 }
 
 .navbarContainer {

@@ -2,12 +2,13 @@ import { Fragment } from "react/jsx-runtime";
 import { useDashboardContext } from "../hooks/useDashboardContextType";
 import { ProductCard } from "../components/ProductCard";
 import AddCartButton from "../components/AddCartButton";
+import style from "./ShopConatiner.module.css"
 
 export default function ShopContainer() {
   const { products, productHandlers } = useDashboardContext();
 
   return (
-    <main className="container">
+    <main className={`container ${style.shop}`}>
       {products.map((product) => (
         <Fragment key={product.id}>
           <ProductCard
@@ -22,7 +23,6 @@ export default function ShopContainer() {
               addToCartHandler={productHandlers.handleAddToCart}
             />
           </ProductCard>
-          <br />
         </Fragment>
       ))}
     </main>

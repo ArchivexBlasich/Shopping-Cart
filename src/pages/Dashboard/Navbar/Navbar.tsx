@@ -14,9 +14,9 @@ export default function Navbar(props: Props) {
   return (
     <>
       <header
-        className={`container ${style.header} ${colors.headerBackground} ${colors.headerShadow}`}
+        className={`${style.header} ${colors.headerBackground} ${colors.headerShadow}`}
       >
-        <nav className={`${style.navbarContainer} ${colors.icon}`}>
+        <nav className={`${style.navbarContainer} ${colors.icon} container`}>
           <ul>
             <li>
               <Link to={PublicRoutes.HOME}>
