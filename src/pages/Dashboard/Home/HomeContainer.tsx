@@ -9,7 +9,7 @@ export default function HomeContainer() {
 
   return (
     <main
-      className={`container ${style.homeContainer} ${colors.pageBackground}`}
+      className={`container ${style.homeContainer}`}
     >
       <div className={`${colors.primaryText} ${style.hero}`}>
         <h1>Welcome to Fabricio Store</h1>
