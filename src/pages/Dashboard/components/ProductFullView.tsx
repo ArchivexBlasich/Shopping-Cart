@@ -20,7 +20,7 @@ export function ProductFullView() {
   return (
     <main className="container">
       <nav className={`${styles.nav}`}>
-        <Link to={`/${PublicRoutes.SHOP}`}>← Back to Shop</Link>
+        <Link to={`${PublicRoutes.SHOP}`}>← Back to Shop</Link>
       </nav>
 
       <article className={`${styles.article}`}>
