@@ -1,0 +1,36 @@
+.cart {
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    gap: 0.6rem;
+}
+
+.totalSection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.removeFromCartBtn {
+    background-color: transparent;
+    color: #dc3545; /* Red text color */
+    padding: 5px 10px;
+    border: 1px solid #dc3545; /* Red border */
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: capitalize;
+}
+
+.removeFromCartBtn:hover {
+    background-color: #dc3545; /* Solid red background on hover */
+    color: white; /* White text on hover */
+}
+
+.removeFromCartBtn:active {
+    background-color: #c82333;
+    border-color: #c82333;
+    transform: translateY(1px);
+}

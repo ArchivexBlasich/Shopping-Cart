@@ -1,6 +1,7 @@
-import { Fragment } from "react/jsx-runtime";
 import { useDashboardContext } from "../hooks/useDashboardContextType";
 import QuantityButton from "./components/QuantityButton";
+import { ProductCard } from "../components/ProductCard";
+import styles from "./CartContainer.module.css"
 
 export default function CartContainer() {
   const { products, productHandlers } = useDashboardContext();
@@ -10,23 +11,37 @@ export default function CartContainer() {
       {products.map((product) => {
         if (product.isCart) {
           return (
-            <Fragment key={product.id}>
-              <div>{product.title}</div>
-              <button
-                onClick={() => productHandlers.handleRemoveFromCart(product.id)}
+            <article key={product.id} className={`${styles.cart}`}>
+              <ProductCard
+                id={product.id}
+                title={product.title}
+                price={product.price}
+                imageURL={product.image}
+                rating={Math.round(product.rating)}
               >
-                Remove
-              </button>
-              <QuantityButton
-                quantity={product.quantity}
-                handleDecrement={() =>
-                  productHandlers.decrementQuantity(product.id)
-                }
-                handleIncrement={() => productHandlers.incrementQuantity(product.id)}
-              />
+                <button
+                  onClick={() =>
+                    productHandlers.handleRemoveFromCart(product.id)
+                  }
+                  className={`${styles.removeFromCartBtn}`}
+                >
+                  Remove
+                </button>
+              </ProductCard>
 
-              <div>Total: ${product.quantity*product.price}</div>
-            </Fragment>
+              <div className={`${styles.totalSection}`}>
+                <QuantityButton
+                  quantity={product.quantity}
+                  handleDecrement={() =>
+                    productHandlers.decrementQuantity(product.id)
+                  }
+                  handleIncrement={() =>
+                    productHandlers.incrementQuantity(product.id)
+                  }
+                />
+                <p>Total: ${product.quantity * product.price}</p>
+              </div>
+            </article>
           );
         }
       })}
