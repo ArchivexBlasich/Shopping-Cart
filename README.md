@@ -3,7 +3,7 @@
 A simple React shopping cart application built as part of my learning journey.
 
 ## Live Demo
-[View it here](https://archivexblasich.github.io/Shopping-Cart/home)
+[View it here](https://archivexblasich.github.io/Shopping-Cart/)
 
 ##  What I Practiced & Learned
 - **React Router**: Setting up multiple pages (Home, Shop, Cart) and enabling navigation with a persistent navbar.  
