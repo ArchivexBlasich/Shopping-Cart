@@ -24,7 +24,7 @@ export function ProductCard(props: Props) {
       </header>
       <figure className={`${styles.figure}`}>
         <nav>
-          <Link to={`/${PublicRoutes.PRODUCT}/${props.id}`}>
+          <Link to={`${PublicRoutes.PRODUCT}/${props.id}`}>
             <img src={props.imageURL} alt={props.title} />
           </Link>
         </nav>
