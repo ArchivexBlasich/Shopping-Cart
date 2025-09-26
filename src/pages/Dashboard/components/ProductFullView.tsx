@@ -40,7 +40,7 @@ export function ProductFullView() {
           <div>
             <span>Rating: {printRateWithStars(product.rating)}</span>
           </div>
-          <AddCartButton id={product.id} addToCartHandler={productHandlers.incrementQuantity}/>
+          <AddCartButton id={product.id} addToCartHandler={productHandlers.handleAddToCart}/>
         </aside>
       </article>
     </main>

@@ -53,7 +53,12 @@ function App() {
   function updateIsCartState(id: number, newIsCart: boolean) {
     setProducts(
       products.map((product) => {
-        if (product.id === id) return { ...product, isCart: newIsCart };
+        if (product.id === id)
+          return {
+            ...product,
+            isCart: newIsCart,
+            quantity: !newIsCart ? 1 : product.quantity,
+          };
         return product;
       })
     );
@@ -119,7 +124,10 @@ function App() {
           <Route path="/" element={<Navigate to={PublicRoutes.HOME} />} />
           <Route path={PublicRoutes.HOME} element={<HomeContainer />} />
           <Route path={PublicRoutes.SHOP} element={<ShopContainer />} />
-          <Route path={`${PublicRoutes.PRODUCT}/:id`} element={<ProductFullView />} />
+          <Route
+            path={`${PublicRoutes.PRODUCT}/:id`}
+            element={<ProductFullView />}
+          />
           <Route path={PublicRoutes.CART} element={<CartContainer />} />
           <Route path="*" element={<NotFound />} />
         </Route>
